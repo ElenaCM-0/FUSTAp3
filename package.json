@@ -1,0 +1,27 @@
+{
+  "name": "phonebook",
+  "version": "1.0.0",
+  "description": "Proyect for exercises of part 3",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev" : "nodemon index.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElenaCM-0/FUSTAp3.git"
+  },
+  "author": "Elena Carrera Monterde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ElenaCM-0/FUSTAp3/issues"
+  },
+  "homepage": "https://github.com/ElenaCM-0/FUSTAp3#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
