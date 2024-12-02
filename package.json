@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev" : "nodemon index.js",
+    "dev": "nodemon index.js",
     "test": "test"
   },
   "repository": {
@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/ElenaCM-0/FUSTAp3#readme",
   "dependencies": {
-    "express": "^4.21.1"
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
