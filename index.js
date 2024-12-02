@@ -9,6 +9,8 @@ app.use(morgan('tiny'))
 
 app.use(cors())
 
+app.use(express.static('dist'))
+
 const max = 1000;
 
 let people = [
