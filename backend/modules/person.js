@@ -6,15 +6,15 @@ const url = process.env.MONGODB_URI
 
 mongoose.set('strictQuery',false)
 
-console.log("Connecting to the database")
+console.log('Connecting to the database')
 
 mongoose.connect(url).
-    then(result => {
-        console.log('connected to MongoDB')
-    })
-    .catch(error => {
-        console.log('error connecting to MongoDB:', error.message)
-    })
+  then(() => {
+    console.log('connected to MongoDB')
+  })
+  .catch(error => {
+    console.log('error connecting to MongoDB:', error.message)
+  })
 
 const personSchema = new mongoose.Schema({
   name: String,

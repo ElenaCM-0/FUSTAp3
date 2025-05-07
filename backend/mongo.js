@@ -26,14 +26,14 @@ const Person = mongoose.model('Person', personSchema)
 
 if (process.argv.length == 3) {
   Person
-  .find({})
-  .then(persons=> {
-    console.log("Phonebook")
-    persons.forEach(p => {
-      console.log(`${p.name} ${p.number}`)})
+    .find({})
+    .then(persons=> {
+      console.log('Phonebook')
+      persons.forEach(p => {
+        console.log(`${p.name} ${p.number}`)})
 
-    mongoose.connection.close()
-  })
+      mongoose.connection.close()
+    })
 } else {
   // Create a new person object following the person model
   const person = new Person({
@@ -42,10 +42,10 @@ if (process.argv.length == 3) {
   })
   
   person
-  .save()
-  .then(result => {
-    console.log(`added ${result.name} number ${result.number} to phonebook`)
+    .save()
+    .then(result => {
+      console.log(`added ${result.name} number ${result.number} to phonebook`)
     
-    mongoose.connection.close()
-  })
+      mongoose.connection.close()
+    })
 }
