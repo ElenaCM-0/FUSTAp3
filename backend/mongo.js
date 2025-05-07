@@ -1,3 +1,4 @@
+// This allows us to use the MongoDB in a more simple way
 const mongoose = require('mongoose')
 
 if (process.argv.length != 3 && process.argv.length != 5) {
@@ -9,13 +10,13 @@ if (process.argv.length != 3 && process.argv.length != 5) {
 
 const password = process.argv[2]
 
-const url =
-  `mongodb+srv://elenac:${password}@uhpart3.5zshy.mongodb.net/phonebook?retryWrites=true&w=majority&appName=UHPart3`
+const url = `mongodb+srv://elenac:${password}@uhpart3.5zshy.mongodb.net/phonebook?retryWrites=true&w=majority&appName=UHPart3`
 
 mongoose.set('strictQuery',false)
 
 mongoose.connect(url)
 
+// Prepare for working with the database
 const personSchema = new mongoose.Schema({
   name: String,
   number: String,
@@ -34,6 +35,7 @@ if (process.argv.length == 3) {
     mongoose.connection.close()
   })
 } else {
+  // Create a new person object following the person model
   const person = new Person({
     name: process.argv[3],
     number: process.argv[4],

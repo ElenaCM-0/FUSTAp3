@@ -4,7 +4,6 @@ const Person = require("./modules/person.js")
 const express = require('express')
 
 const morgan = require('morgan')
-const cors = require('cors')
 
 // Will create an express application stored in the app variable
 const app = express()
@@ -54,7 +53,7 @@ app.get('/api/persons/:id', (request, response, next) => {
 			response.status(404).end()
 		}
 	})
-		.catch(error => next(error))
+	.catch(error => next(error))
 })
 
 app.post('/api/persons', (request, response) => {
@@ -128,6 +127,13 @@ app.delete('/api/persons/:id', (request, response) => {
 		})
 		.catch(error => next(error))
 })
+
+const unknownEndpoint = (request, response) => {
+	response.status(404).send({ error: 'unknown endpoint' })
+}
+
+// handler of requests with unknown endpoint
+app.use(unknownEndpoint)
 
 const errorHandler = (error, request, response, next) => {
 	console.log("Error handler called")
