@@ -77,7 +77,7 @@ app.post('/api/persons', (request, response) => {
     .then(people => {
 
       // Check if the name is repeated
-      if (people.some(person => person.name == body.name)) {
+      if (people.some(person => person.name === body.name)) {
         return response.status(400).json({
           error: 'name must be unique'
         })

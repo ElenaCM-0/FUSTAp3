@@ -1,7 +1,7 @@
 // This allows us to use the MongoDB in a more simple way
 const mongoose = require('mongoose')
 
-if (process.argv.length != 3 && process.argv.length != 5) {
+if (process.argv.length !== 3 && process.argv.length !== 5) {
   console.log('Acceptable arguments are: \
     \npassword \
     \npassword name number')
@@ -24,10 +24,10 @@ const personSchema = new mongoose.Schema({
 
 const Person = mongoose.model('Person', personSchema)
 
-if (process.argv.length == 3) {
+if (process.argv.length === 3) {
   Person
     .find({})
-    .then(persons=> {
+    .then(persons => {
       console.log('Phonebook')
       persons.forEach(p => {
         console.log(`${p.name} ${p.number}`)})
@@ -40,12 +40,10 @@ if (process.argv.length == 3) {
     name: process.argv[3],
     number: process.argv[4],
   })
-  
   person
     .save()
     .then(result => {
       console.log(`added ${result.name} number ${result.number} to phonebook`)
-    
       mongoose.connection.close()
     })
 }
